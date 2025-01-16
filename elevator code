@@ -1,4 +1,6 @@
 import edu.wpi.first.wpilibj.DriverStation;
 import frc.robot.commons.LoggedTunableNumber;
 
-public class ElevatorTalonFX implements ElevatorIO
+public class ElevatorTalonFX implements ElevatorIO{ 
+         TalonFX leader = new TalonFX(ELEVATOR_LEFT_ID,CARNIVORE_BUS_NAME)
+         TalonFX follower = new TalonFX(ELEVATOR_RIGHT_ID,CARNIVORE_BUS_NAME)
