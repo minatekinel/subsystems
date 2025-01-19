@@ -1,8 +1,19 @@
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj.DriverStation;
 import frc.robot.commons.LoggedTunableNumber;
+
+import edu.wpi.first.wpilibj.DriverStation;
+import frc.robot.commons.LoggedTunableNumber;
+
+
 
 public class ElevatorTalonFX implements ElevatorIO{ 
          TalonFX leader = new TalonFX(ELEVATOR_LEFT_ID,CARNIVORE_BUS_NAME);
          TalonFX follower = new TalonFX(ELEVATOR_RIGHT_ID,CARNIVORE_BUS_NAME);
          LoggedTunableNumber kP=  new LoggedTunableNumber ("Elevator/kP",);
          LoggedTunableNumber kD=  new LoggedTunableNumber  ("Elevator/kD",);
+         LoggedTunableNumber kForwardsKa = new LoggedTunableNumber("Elevator/kForwardskA", 0.01);
+         LoggedTunableNumber kBackwardsKa = new LoggedTunableNumber("Elevator/kBackwardskA", 0.005);
+         LoggedTunableNumber kMaxVelocity = new LoggedTunableNumber("Elevator/kMaxVelocity", 3.435000);
+         LoggedTunableNumber kMotionCruiseVelocity = new LoggedTunableNumber("Elevator/kMotionCruiseVelocity", 3.0); 
+         LoggedTunableNumber kMaxAccel = new LoggedTunableNumber("Elevator/kMaxAccel", 12.0); 
