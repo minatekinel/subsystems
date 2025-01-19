@@ -12,8 +12,8 @@ public class ElevatorTalonFX implements ElevatorIO{
          TalonFX leader = new TalonFX(ELEVATOR_LEFT_ID,CARNIVORE_BUS_NAME);
          TalonFX follower = new TalonFX(ELEVATOR_RIGHT_ID,CARNIVORE_BUS_NAME);
 
-         LoggedTunableNumber kP=  new LoggedTunableNumber ("Elevator/kP",);
-         LoggedTunableNumber kD=  new LoggedTunableNumber  ("Elevator/kD",);
+         LoggedTunableNumber kP=  new LoggedTunableNumber ("Elevator/kP",00);
+         LoggedTunableNumber kD=  new LoggedTunableNumber  ("Elevator/kD",00);
          LoggedTunableNumber kForwardsKa = new LoggedTunableNumber("Elevator/kForwardskA", 0.01);
          LoggedTunableNumber kBackwardsKa = new LoggedTunableNumber("Elevator/kBackwardskA", 0.005);
 
