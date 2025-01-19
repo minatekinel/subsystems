@@ -30,3 +30,13 @@ public ElevatorIOTalonFX() {
         leader.setInverted(ELEVATOR_LEFT_INVERT_TYPE);
         leader.setNeutralMode(NeutralMode.Coast);
         leader.enableVoltageCompensation(true);
+
+        TalonFXConfiguration followerConfig = new TalonFXConfiguration();
+        followerConfig.neutralDeadband = 0.001;
+        followerConfig.statorCurrLimit = new StatorCurrentLimitConfiguration(true, 100, 100, 1.5);
+        follower.configAllSettings(followerConfig);
+        follower.follow(leader);
+        follower.setInverted(ELEVATOR_RIGHT_INVERT_TYPE);
+        follower.setStatusFramePeriod(StatusFrame.Status_1_General, 197);
+        follower.setNeutralMode(NeutralMode.Coast);
+        follower.setStatusFramePeriod(StatusFrame.Status_2_Feedback0, 193);
